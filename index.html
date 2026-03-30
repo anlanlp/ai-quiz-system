@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI计算机智能刷题系统</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>AI 计算机智能刷题系统</h1>
+            <p>专业题库 · 智能解析 · 错题本 · 考试模式</p>
+            <button class="theme-toggle">🌙 暗黑模式</button>
+        </header>
+
+        <!-- 计分板 -->
+        <div class="score-board">
+            <span>总分：<span id="score">0</span></span>
+            <span>答对：<span id="correct">0</span></span>
+            <span>答错：<span id="wrong">0</span></span>
+            <span>耗时：<span id="timer">00:00</span></span>
+        </div>
+
+        <!-- 功能栏 -->
+        <div class="tool-bar">
+            <div class="mode-group">
+                <button class="mode-btn active" data-mode="practice">练习模式</button>
+                <button class="mode-btn" data-mode="exam">考试模式</button>
+            </div>
+            <div class="filter-group">
+                <select class="diff-select">
+                    <option value="all">全部难度</option>
+                    <option value="easy">简单</option>
+                    <option value="medium">中等</option>
+                    <option value="hard">困难</option>
+                </select>
+                <button class="random-btn">🔀 随机抽题</button>
+                <button class="wrong-btn">📚 错题本</button>
+            </div>
+        </div>
+
+        <!-- 分类栏 -->
+        <div class="category-bar">
+            <button class="cat-btn active" data-cat="java">Java基础</button>
+            <button class="cat-btn" data-cat="frontend">前端基础</button>
+            <button class="cat-btn" data-cat="network">计算机网络</button>
+            <button class="cat-btn" data-cat="datastructure">数据结构</button>
+        </div>
+
+        <!-- 刷题区 -->
+        <div class="quiz-card">
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="question-num">第 <span id="q-num">1</span> 题 / <span id="total">10</span></div>
+            <div class="question" id="question"></div>
+            <div class="options" id="options"></div>
+            <div class="btn-group">
+                <button class="prev-btn">上一题</button>
+                <button class="check-btn">提交答案</button>
+                <button class="next-btn">下一题</button>
+                <button class="collect-btn">⭐ 收藏本题</button>
+            </div>
+        </div>
+
+        <!-- AI解析区 -->
+        <div class="ai-section">
+            <h3>🤖 AI 智能解析</h3>
+            <button class="ai-btn">获取专业解析</button>
+            <div class="ai-content" id="ai-content"></div>
+        </div>
+
+        <!-- 考试交卷弹窗 -->
+        <div class="modal" id="exam-modal">
+            <div class="modal-content">
+                <h2>考试结束！</h2>
+                <div class="result-box">
+                    <p>总题数：<span id="exam-total">0</span></p>
+                    <p>答对：<span id="exam-correct">0</span></p>
+                    <p>正确率：<span id="exam-rate">0%</span></p>
+                    <p>耗时：<span id="exam-time">00:00</span></p>
+                </div>
+                <button class="close-modal">关闭</button>
+            </div>
+        </div>
+    </div>
+<link rel="stylesheet" href="style.css">
+<script src="quizManager.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿# 忽略VS项目文件
+.vs/
+*.user
+*.suo
+*.sln
+Web.config
+
+# 忽略系统文件
+Thumbs.db
+.DS_Store
